@@ -8,13 +8,6 @@ public class FileCopy {
 	//1度処理を行ったファイルは無視する
 	private String targetName;
 
-	public void copy(File[] list) {
-
-		for (int i = 0; i > list.length; i++) {
-
-		}
-	}
-
 	public File[] getList(String destinationDir) {
 		File dir = new File(destinationDir);
 		File[] list = dir.listFiles();
@@ -43,10 +36,16 @@ public class FileCopy {
 		return list;
 	}
 
+	public void copy(File[] list) {
+		for (int i = 0; i > list.length; i++) {
+			
+		}
+	}
+
 	public String setTarget() {
 		//		後々GUIにする
 		System.out.println("検索する単語を入力してください");
-		targetName =  new java.util.Scanner(System.in).nextLine();
+		targetName = new java.util.Scanner(System.in).nextLine();
 		return targetName;
 	}
 

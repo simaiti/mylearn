@@ -2,9 +2,6 @@ package ファイル整理;
 
 public class Main {
 
-
-
-
 	public static void main(String[] args) {
 		/*単語を入力して検索し、該当するファイル・フォルダを指定したフォルダにコピーor移動
 		 * させる、コピーの場合は元のフォルダ・ファイルを削除する。
@@ -27,11 +24,10 @@ public class Main {
 		 *
 		 * */
 
-
 		//コマンドの選択画面
 		String destinationDir = null;
 		String selectAct = "default";
-		String currentList = null ;
+		String currentList = null;
 
 		FileCopy c = new FileCopy();
 		FileDelete d = new FileDelete();
@@ -39,11 +35,12 @@ public class Main {
 		destinationDir = "C:\\Users\\am\\Documents\\memo\\";
 		System.out.println("コマンドを入力してください");
 		selectAct = new java.util.Scanner(System.in).nextLine();
-		if(selectAct == "copy" ) {
+
+		if (selectAct.equals("copy")) {
 			c.getList(destinationDir);
-		}else if(selectAct == "delete") {
+		} else if (selectAct.equals("delete")) {
 			d.fileDelete(currentList);
-		}else {
+		} else {
 
 		}
 
