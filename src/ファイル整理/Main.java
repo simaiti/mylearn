@@ -32,19 +32,20 @@ public class Main {
 		FileCopy c = new FileCopy();
 		FileDelete d = new FileDelete();
 
+//		テスト用の値
 		destinationDir = "C:\\Users\\am\\Documents\\memo\\";
+
 		System.out.println("コマンドを入力してください");
 		selectAct = new java.util.Scanner(System.in).nextLine();
 
 		if (selectAct.equals("copy")) {
-			c.getList(destinationDir);
+			c.setList(destinationDir);
 		} else if (selectAct.equals("delete")) {
 			d.fileDelete(currentList);
 		} else {
-
+			
 		}
 
 	}
 
-	/*motimoti++/+*/
 }

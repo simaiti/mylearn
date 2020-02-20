@@ -1,22 +1,35 @@
 package ファイル整理;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.FilenameFilter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class FileCopy {
-	//該当するファイル・フォルダがなくなるまで繰り返しコピーさせる
-	//1度処理を行ったファイルは無視する
 	private String targetName;
+	private String destinationDir;
+	private File dir = new File(destinationDir);
+	private File[] list = dir.listFiles();
 
-	public File[] getList(String destinationDir) {
-		File dir = new File(destinationDir);
-		File[] list = dir.listFiles();
+	public void setWord() {
+		//		後々GUIにする
+		System.out.println("検索する単語を入力してください");
+		targetName = new java.util.Scanner(System.in).nextLine();
+	}
 
+	public void setDestinationDir(String destinationDir) {
+		System.out.println("コピー先のフォルダを指定してください");
+		this.destinationDir = destinationDir;
+	}
+
+	public void setList(String destinationDir) {
+
+		//		値の確認用
 		for (int i = 0; i < list.length; i++) {
 			System.out.println(list[i]);
 		}
-
-		System.out.println(targetName);
+		System.out.println(targetName + "で絞りこみます");
 
 		FilenameFilter filter = new FilenameFilter() {
 			@Override
@@ -28,25 +41,26 @@ public class FileCopy {
 				}
 			}
 		};
+
 		list = dir.listFiles(filter);
+		//		値の確認用
 		for (int i = 0; i < list.length; i++) {
-			//			System.out.println(list[i]);//ここをリストに書き込みに変更する
-
-		}
-		return list;
-	}
-
-	public void copy(File[] list) {
-		for (int i = 0; i > list.length; i++) {
-			
+			System.out.println(list[i]);
 		}
 	}
 
-	public String setTarget() {
-		//		後々GUIにする
-		System.out.println("検索する単語を入力してください");
-		targetName = new java.util.Scanner(System.in).nextLine();
-		return targetName;
+	public void recordListToText(String lastList, File[] list) {
+		try {
+			FileWriter file = new FileWriter(lastList);
+			PrintWriter pw = new PrintWriter(file);
+			for (int i = 0; i > list.length; i++) {
+				pw.println(list[i]);
+			}
+			pw.close();
+		} catch (IOException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 	}
 
 	public void makeDir() {

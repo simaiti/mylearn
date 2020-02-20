@@ -10,9 +10,9 @@ class FileCopyTest {
 
 	void testGetList() {
 		String destinationDir = "C:\\Users\\am\\Documents\\memo\\";
-		c.setTarget();
+		c.setWord();
 
-		c.getList(destinationDir);
+		c.setList(destinationDir);
 
 		fail("まだ実装されていません");
 	}
@@ -27,7 +27,7 @@ class FileCopyTest {
 	@Test
 	void makedir() {
 
-		c.setTarget();
+		c.setWord();
 
 		c.makeDir();
 
