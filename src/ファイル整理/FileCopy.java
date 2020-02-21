@@ -15,11 +15,14 @@ public class FileCopy {
 	public void setWord() {
 		//		後々GUIにする
 		System.out.println("検索する単語を入力してください");
+
 		targetName = new java.util.Scanner(System.in).nextLine();
 	}
 
 	public void setDestinationDir(String destinationDir) {
+		//		後々GUIにする
 		System.out.println("コピー先のフォルダを指定してください");
+
 		this.destinationDir = destinationDir;
 	}
 
@@ -47,6 +50,13 @@ public class FileCopy {
 		for (int i = 0; i < list.length; i++) {
 			System.out.println(list[i]);
 		}
+	}
+
+	private void copyFile() {
+		// TODO 自動生成されたメソッド・スタブ
+
+
+
 	}
 
 	public void recordListToText(String lastList, File[] list) {
