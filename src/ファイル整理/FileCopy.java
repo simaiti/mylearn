@@ -22,7 +22,6 @@ public class FileCopy {
 	public void setDestinationDir(String destinationDir) {
 		//		後々GUIにする
 		System.out.println("コピー先のフォルダを指定してください");
-
 		this.destinationDir = destinationDir;
 	}
 
@@ -53,8 +52,6 @@ public class FileCopy {
 	}
 
 	private void copyFile() {
-		// TODO 自動生成されたメソッド・スタブ
-
 
 
 	}
